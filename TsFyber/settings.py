@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-psc+k9g1q50+zp!h23#egv80qm62$$^zibvm$so-r^h*7pmzao
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tzfyber.onrender.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'TsFyber.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-   'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 

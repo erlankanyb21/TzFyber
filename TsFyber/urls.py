@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import RewardHistoryView
+from api.views import RewardHistoryListView, RewardHistoryCreateView
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
@@ -42,7 +42,8 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/balance', RewardHistoryView.as_view(), name='reward-api'),
+    path('api/balance', RewardHistoryListView.as_view(), name='reward-api'),
+    path('api/create', RewardHistoryCreateView.as_view(), name='reward-api-create'),
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
